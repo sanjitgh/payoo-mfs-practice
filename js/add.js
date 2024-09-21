@@ -3,7 +3,10 @@ document.getElementById('btn-add-money')
     event.preventDefault(); // stop loading
     const addMoney = getInputValueById('input-amount-number');
     const addPin    = getInputValueById ('input-pin-number');
-
+    if(isNaN(addMoney)){
+        alert('Faild to add money');
+        return;
+    }
     if(addPin === 1234){
         const balance = getTextFieldById('available-balance');
         const newBalance = balance + addMoney;
